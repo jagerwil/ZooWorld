@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace ZooWorld.Gameplay.Animals.Interactions {
+namespace ZooWorld.Gameplay.Animals.Interaction {
     public abstract class BaseAnimalInteraction : MonoBehaviour, IAnimalComponent {
         public abstract AnimalType AnimalType { get; }
 

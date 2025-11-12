@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace ZooWorld.Gameplay.Animals.Interactions {
+namespace ZooWorld.Gameplay.Animals.Interaction {
     public class PreyAnimalInteraction : BaseAnimalInteraction {
         [SerializeField] private Rigidbody _rigidbody;
         [SerializeField] private float _bounceMultiplier = 2f;

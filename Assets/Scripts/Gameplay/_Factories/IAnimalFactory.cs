@@ -6,6 +6,7 @@ using ZooWorld.Gameplay.Animals;
 
 namespace ZooWorld.Gameplay._Factories {
     public interface IAnimalFactory : IGamePrefabFactory<Animal> {
+        public event Action<Animal> OnSpawned;
         public event Action<Animal> OnDespawned;
         
         [CanBeNull]

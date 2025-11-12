@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using Zenject;
-using ZooWorld.Gameplay.Animals.Interactions;
+using ZooWorld.Gameplay.Animals.Interaction;
 
 namespace ZooWorld.Gameplay.Animals {
     public class Animal : MonoBehaviour, IPoolable {

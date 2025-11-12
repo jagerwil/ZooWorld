@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace ZooWorld.Gameplay.Animals.Interactions {
+namespace ZooWorld.Gameplay.Animals.Interaction {
     public class PredatorAnimalInteraction : BaseAnimalInteraction {
         public override AnimalType AnimalType => AnimalType.Predator;
 

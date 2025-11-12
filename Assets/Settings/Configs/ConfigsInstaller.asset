@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: ConfigsInstaller
   m_EditorClassIdentifier: Assembly-CSharp::ZooWorld.Architecture.Installers.ConfigsInstaller
   _scenesAddresses: {fileID: 11400000, guid: d72b96601bb0de247853557d0a23a43a, type: 2}
+  _prefabAddresses: {fileID: 11400000, guid: cadc15a66b343d643afe855a2584a636, type: 2}
   _animalsConfig: {fileID: 11400000, guid: 8d4c582a8233be94fab9658a93419853, type: 2}

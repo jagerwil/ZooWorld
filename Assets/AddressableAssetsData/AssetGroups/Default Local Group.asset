@@ -30,6 +30,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fd8afce195059cb488b7eeb5ec587fce
+    m_Address: Assets/Prefabs/UI/PredatorTastyMessage.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 70bc4521811a3484da99d9005d5b5da9, type: 2}
   m_SchemaSet:

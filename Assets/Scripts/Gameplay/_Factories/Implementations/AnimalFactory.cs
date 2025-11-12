@@ -24,6 +24,7 @@ namespace ZooWorld.Gameplay._Factories.Implementations {
             Animal.onDespawnRequested -= Despawn;
         }
 
+        public event Action<Animal> OnSpawned;
         public event Action<Animal> OnDespawned;
 
         [CanBeNull]
@@ -50,6 +51,9 @@ namespace ZooWorld.Gameplay._Factories.Implementations {
             }
             
             var animal = CreateInternal(info.Address, position, Quaternion.identity);
+            if (animal) {
+                OnSpawned?.Invoke(animal);
+            }
             return animal;
         }
     }
