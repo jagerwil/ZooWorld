@@ -15,8 +15,15 @@ MonoBehaviour:
   _animals:
   - <Id>k__BackingField: 0
     <Address>k__BackingField:
-      m_AssetGUID: 95f64aaef55648043b19a24f0d82f653
+      m_AssetGUID: 44d56308353a7594ea00af2d335dc8af
       m_SubObjectName: 
       m_SubObjectType: 
       m_SubObjectGUID: 
       m_EditorAssetChanged: 0
+  - <Id>k__BackingField: 1
+    <Address>k__BackingField:
+      m_AssetGUID: 6796a24cfdfe5d849b842aa80aead379
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 1

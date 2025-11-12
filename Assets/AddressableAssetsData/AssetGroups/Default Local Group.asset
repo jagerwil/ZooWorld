@@ -15,6 +15,16 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_GUID: aa5964ba8e7780f4889da3c6ca2d66ec
   m_SerializeEntries:
+  - m_GUID: 44d56308353a7594ea00af2d335dc8af
+    m_Address: Assets/Prefabs/Animals/Prey/Frog.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6796a24cfdfe5d849b842aa80aead379
+    m_Address: Assets/Prefabs/Animals/Predators/Snake.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 99c9720ab356a0642a771bea13969a05
     m_Address: Assets/Scenes/Game.unity
     m_ReadOnly: 0

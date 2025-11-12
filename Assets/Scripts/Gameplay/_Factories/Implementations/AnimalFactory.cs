@@ -37,11 +37,6 @@ namespace ZooWorld.Gameplay._Factories.Implementations {
             }
             
             var animal = CreateInternal(info.Address, position, Quaternion.identity);
-            if (!animal) {
-                return null;
-            }
-            
-            animal.Initialize();
             return animal;
         }
     }

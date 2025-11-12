@@ -41,11 +41,11 @@ namespace ZooWorld.Gameplay.Animals.Controller {
         
         #region Public methods
         public override void Enable() {
-            SetState(JumpMovementState.Disabled);
+            SetState(JumpMovementState.IdleAfterJump);
         }
 
         public override void Disable() {
-            SetState(JumpMovementState.PreparedToJump);
+            SetState(JumpMovementState.Disabled);
         }
         #endregion
 
