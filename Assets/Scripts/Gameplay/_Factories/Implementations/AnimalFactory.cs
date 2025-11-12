@@ -1,3 +1,4 @@
+using System;
 using Jagerwil.Core.Architecture.Factories.Implementations;
 using Jagerwil.Core.Services;
 using JetBrains.Annotations;
@@ -7,7 +8,7 @@ using ZooWorld.Configs;
 using ZooWorld.Gameplay.Animals;
 
 namespace ZooWorld.Gameplay._Factories.Implementations {
-    public class AnimalFactory : BaseGamePrefabFactory<Animal>, IAnimalFactory {
+    public class AnimalFactory : BaseGamePrefabFactory<Animal>, IAnimalFactory, IDisposable {
         private readonly AnimalsConfig _animalsConfig;
 
         public AnimalFactory(IInstantiator instantiator,
@@ -16,8 +17,15 @@ namespace ZooWorld.Gameplay._Factories.Implementations {
             Transform defaultRoot)
             : base(instantiator, addressablesLoader, new MemoryPoolSettings(), defaultRoot) {
             _animalsConfig = animalsConfig;
+            Animal.onDespawnRequested += Despawn;
         }
-        
+
+        public void Dispose() {
+            Animal.onDespawnRequested -= Despawn;
+        }
+
+        public event Action<Animal> OnDespawned;
+
         [CanBeNull]
         public Animal Spawn(AnimalId id, Vector3 position) {
             var animalInfo = _animalsConfig.GetInfoById(id);
@@ -28,6 +36,11 @@ namespace ZooWorld.Gameplay._Factories.Implementations {
         public Animal SpawnRandom(Vector3 position) {
             var animalInfo = _animalsConfig.GetRandomInfo();
             return SpawnInternal(animalInfo, position);
+        }
+
+        public override void Despawn(Animal obj) {
+            base.Despawn(obj);
+            OnDespawned?.Invoke(obj);
         }
 
         [CanBeNull]

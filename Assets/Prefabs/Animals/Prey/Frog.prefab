@@ -163,8 +163,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7418714119041464677, guid: 95f64aaef55648043b19a24f0d82f653, type: 3}
       propertyPath: m_Name
-      value: Frog Animal
+      value: Frog
       objectReference: {fileID: 0}
+    - target: {fileID: 7774758996615493787, guid: 95f64aaef55648043b19a24f0d82f653, type: 3}
+      propertyPath: _animalInteraction
+      value: 
+      objectReference: {fileID: 7153178618041249104}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -175,6 +179,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7418714119041464677, guid: 95f64aaef55648043b19a24f0d82f653, type: 3}
       insertIndex: 3
       addedObject: {fileID: 743806162582621815}
+    - targetCorrespondingSourceObject: {fileID: 7418714119041464677, guid: 95f64aaef55648043b19a24f0d82f653, type: 3}
+      insertIndex: 4
+      addedObject: {fileID: 7153178618041249104}
   m_SourcePrefab: {fileID: 100100000, guid: 95f64aaef55648043b19a24f0d82f653, type: 3}
 --- !u!54 &3932385583495660133 stripped
 Rigidbody:
@@ -214,6 +221,19 @@ MonoBehaviour:
   _jumpDistance: 2
   _jumpHeight: 1
   _intervalBetweenJumps: 0.5
+--- !u!114 &7153178618041249104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5984015302742977509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdd41d3b7b4bc754f871ef47ef436113, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ZooWorld.Gameplay.Animals.Interactions.PreyAnimalInteraction
+  _rigidbody: {fileID: 3932385583495660133}
 --- !u!4 &7702781054136408270 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6852835512516069966, guid: 95f64aaef55648043b19a24f0d82f653, type: 3}

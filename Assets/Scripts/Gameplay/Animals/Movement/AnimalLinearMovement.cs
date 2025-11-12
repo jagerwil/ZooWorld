@@ -25,6 +25,7 @@ namespace ZooWorld.Gameplay.Animals.Movement {
         
         public override void Disable() {
             _cancelToken?.Cancel();
+            Rigidbody.linearVelocity = Vector3.zero;
         }
 
         private async UniTask FindNewTargetEndlessAsync() {

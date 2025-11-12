@@ -23,5 +23,8 @@ namespace ZooWorld.Gameplay.Animals.TargetProvider {
             Debug.LogWarning($"{nameof(AnimalTargetProvider)}.{nameof(GetTargetPoint)}(): all random angles are out of bounds!");
             return Vector3.zero;
         }
+
+        public override void Enable() { }
+        public override void Disable() { }
     }
 }

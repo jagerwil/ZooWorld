@@ -1,10 +1,9 @@
 using Cysharp.Threading.Tasks;
 using MafiaGame.Extensions;
 using UnityEngine;
-using ZooWorld.Gameplay.Animals.Movement;
 using ZooWorld.Gameplay.Animals.TargetProvider;
 
-namespace ZooWorld.Gameplay.Animals.Controller {
+namespace ZooWorld.Gameplay.Animals.Movement {
     [RequireComponent(typeof(AnimalTargetProvider))]
     public class AnimalJumpMovement : BaseAnimalMovement {
         #region Fields

@@ -165,6 +165,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Snake
       objectReference: {fileID: 0}
+    - target: {fileID: 7774758996615493787, guid: 95f64aaef55648043b19a24f0d82f653, type: 3}
+      propertyPath: _animalInteraction
+      value: 
+      objectReference: {fileID: 1101338950311941331}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -175,6 +179,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7418714119041464677, guid: 95f64aaef55648043b19a24f0d82f653, type: 3}
       insertIndex: 3
       addedObject: {fileID: 3175907166782016835}
+    - targetCorrespondingSourceObject: {fileID: 7418714119041464677, guid: 95f64aaef55648043b19a24f0d82f653, type: 3}
+      insertIndex: 4
+      addedObject: {fileID: 1101338950311941331}
   m_SourcePrefab: {fileID: 100100000, guid: 95f64aaef55648043b19a24f0d82f653, type: 3}
 --- !u!1 &453503312632989989 stripped
 GameObject:
@@ -197,6 +204,18 @@ MonoBehaviour:
   Rigidbody: {fileID: 7193083341462872229}
   _moveSpeed: 5
   _newTargetInterval: 1
+--- !u!114 &1101338950311941331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453503312632989989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acc90bee7a2d25c44a9309da5f704ea4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ZooWorld.Gameplay.Animals.Interactions.PredatorAnimalInteraction
 --- !u!114 &1816043622202530043 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8758474323652061371, guid: 95f64aaef55648043b19a24f0d82f653, type: 3}
