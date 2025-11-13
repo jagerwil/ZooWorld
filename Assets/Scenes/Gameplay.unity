@@ -1166,7 +1166,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1126511867}
-  - component: {fileID: 1126511868}
   m_Layer: 0
   m_Name: Level
   m_TagString: Untagged
@@ -1191,19 +1190,6 @@ Transform:
   - {fileID: 1433206766}
   m_Father: {fileID: 1117914211}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1126511868
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1126511866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10268fbb632bafa46a68fe4965fc3823, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ZooWorld.Gameplay.Level.LevelBounds
-  _size: {x: 19.5, y: 11}
 --- !u!1 &1349354163
 GameObject:
   m_ObjectHideFlags: 0
@@ -1380,8 +1366,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f076d3d26f9bc574c9637112b0b7e39c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZooWorld.Architecture.Installers.Scenes.GameplaySceneInstaller
-  _levelBounds: {fileID: 1126511868}
   _animalSpawner: {fileID: 886276942}
+  _camera: {fileID: 330585545}
   _animalsSpawnRoot: {fileID: 468175341}
   _tastyMessagesSpawnRoot: {fileID: 287229718}
 --- !u!1 &1354862556

@@ -9,12 +9,11 @@ using ZooWorld.Gameplay._Providers.Implementations;
 using ZooWorld.Gameplay._Services;
 using ZooWorld.Gameplay._Services.Implementations;
 using ZooWorld.Gameplay.Animals.Spawners;
-using ZooWorld.Gameplay.Level;
 
 namespace ZooWorld.Architecture.Installers.Scenes {
     public class GameplaySceneInstaller : MonoInstaller {
-        [SerializeField] private LevelBounds _levelBounds;
         [SerializeField] private AnimalSpawner _animalSpawner;
+        [SerializeField] private Camera _camera;
         [Space]
         [SerializeField] private Transform _animalsSpawnRoot;
         [SerializeField] private Transform _tastyMessagesSpawnRoot;
@@ -30,11 +29,11 @@ namespace ZooWorld.Architecture.Installers.Scenes {
         }
 
         private void BindProviders() {
-            Container.Bind<ICameraProvider>().To<CameraProvider>().AsSingle();
+            Container.Bind<ICameraProvider>()
+                     .To<CameraProvider>()
+                     .AsSingle().WithArguments(_camera);
             
-            Container.Bind<ILevelBoundsProvider>()
-                     .To<LevelBoundsProvider>()
-                     .AsSingle().WithArguments(_levelBounds);
+            Container.Bind<ILevelBoundsProvider>().To<LevelBoundsProvider>().AsSingle();
 
             Container.Bind<IAnimalSpawnerProvider>()
                      .To<AnimalSpawnerProvider>()
