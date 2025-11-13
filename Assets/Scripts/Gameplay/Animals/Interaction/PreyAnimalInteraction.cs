@@ -1,9 +1,9 @@
 using UnityEngine;
+using ZooWorld.Gameplay.Animals.Movement;
 
 namespace ZooWorld.Gameplay.Animals.Interaction {
     public class PreyAnimalInteraction : BaseAnimalInteraction {
-        [SerializeField] private Rigidbody _rigidbody;
-        [SerializeField] private float _bounceMultiplier = 2f;
+        [SerializeField] private BaseAnimalMovement _movement;
         
         public override AnimalType AnimalType => AnimalType.Prey;
 
@@ -37,19 +37,15 @@ namespace ZooWorld.Gameplay.Animals.Interaction {
             var angleAbs = Mathf.Abs(deltaAngle);
             if (angleAbs < 90f) {
                 var angleSign = Mathf.Sign(deltaAngle);
-                var rotationAngle = angleSign * -2f * (90f - Mathf.Abs(deltaAngle));
+                var rotationAngle = angleSign * 2f * (90f - Mathf.Abs(deltaAngle));
                 bounceRotation = Quaternion.Euler(0f, rotationAngle, 0f);
             }
             else {
                 bounceRotation = Quaternion.identity;
             }
 
-            _rigidbody.rotation *= bounceRotation;
-
-            var velocity = bounceRotation * _rigidbody.linearVelocity.normalized;
-            velocity.x *= _bounceMultiplier;
-            velocity.z *= _bounceMultiplier;
-            _rigidbody.linearVelocity = velocity;
+            var moveDirection = bounceRotation * Vector3.forward;
+            _movement.ChangeHorizontalDirection(new Vector2(moveDirection.x, moveDirection.z));
         }
     }
 }

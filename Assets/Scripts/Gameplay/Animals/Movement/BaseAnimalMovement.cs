@@ -10,6 +10,8 @@ namespace ZooWorld.Gameplay.Animals.Movement {
         
         public abstract void Enable();
         public abstract void Disable();
+        
+        public abstract void ChangeHorizontalDirection(Vector2 newDirection);
 
         protected void GetNewTarget(float minDistanceToTarget) {
             TargetPosition = _targetProvider.GetTargetPoint(minDistanceToTarget);

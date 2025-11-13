@@ -46,7 +46,23 @@ namespace ZooWorld.Gameplay.Animals.Movement {
         public override void Disable() {
             SetState(JumpMovementState.Disabled);
         }
-        #endregion
+
+        public override void ChangeHorizontalDirection(Vector2 newDirection) {
+            if (_state != JumpMovementState.Jumping) {
+                return;
+            }
+            
+            var newAngle = Quaternion.LookRotation(new Vector3(newDirection.x, 0f, newDirection.y), Vector3.up);
+            Rigidbody.rotation = newAngle;
+
+            var velocity = Rigidbody.linearVelocity;
+            var newVelocity = Rigidbody.rotation * _jumpVelocity;
+            newVelocity.y = velocity.y;
+            
+            Rigidbody.linearVelocity = newVelocity;
+        }
+
+#endregion
 
         #region Private methods
         private void SetState(JumpMovementState state) {

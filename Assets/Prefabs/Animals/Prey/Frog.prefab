@@ -233,7 +233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdd41d3b7b4bc754f871ef47ef436113, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZooWorld.Gameplay.Animals.Interactions.PreyAnimalInteraction
-  _rigidbody: {fileID: 3932385583495660133}
+  _movement: {fileID: 743806162582621815}
 --- !u!4 &7702781054136408270 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6852835512516069966, guid: 95f64aaef55648043b19a24f0d82f653, type: 3}

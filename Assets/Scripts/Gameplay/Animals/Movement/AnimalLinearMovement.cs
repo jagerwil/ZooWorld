@@ -16,7 +16,7 @@ namespace ZooWorld.Gameplay.Animals.Movement {
         }
 
         private void FixedUpdate() {
-            Rigidbody.linearVelocity = _movementVector;
+            Rigidbody.linearVelocity = Rigidbody.rotation * _movementVector;
         }
 
         public override void Enable() {
@@ -28,6 +28,10 @@ namespace ZooWorld.Gameplay.Animals.Movement {
             Rigidbody.linearVelocity = Vector3.zero;
         }
 
+        public override void ChangeHorizontalDirection(Vector2 newDirection) {
+            SetRotation(newDirection);
+        }
+
         private async UniTask FindNewTargetEndlessAsync() {
             _cancelToken = new CancellationTokenSource();
 
@@ -35,13 +39,16 @@ namespace ZooWorld.Gameplay.Animals.Movement {
                 GetNewTarget(_moveSpeed * _newTargetInterval);
 
                 var movementDirection = (TargetPosition - transform.position).normalized;
-                movementDirection.y = 0;
-                
-                Rigidbody.rotation = Quaternion.LookRotation(movementDirection);
-                _movementVector = Rigidbody.rotation * new Vector3(0f, 0f, _moveSpeed);
+                SetRotation(movementDirection);
+                _movementVector = new Vector3(0f, 0f, _moveSpeed);
                 
                 await UniTask.WaitForSeconds(_newTargetInterval, cancellationToken: _cancelToken.Token);
             }
+        }
+
+        private void SetRotation(Vector3 movementDirection) {
+            movementDirection.y = 0;
+            Rigidbody.rotation = Quaternion.LookRotation(movementDirection, Vector3.up);
         }
     }
 }
